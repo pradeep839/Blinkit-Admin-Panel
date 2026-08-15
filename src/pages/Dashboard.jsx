@@ -5,38 +5,69 @@ import { ResponsiveContainer, XAxis, YAxis, LineChart, Line, Tooltip, CartesianG
 
 const Dashboard = () => {
 
-    const orderData = [
-        { date: '01 Aug', Orders: 1400 },
-        { date: '02 Aug', Orders: 1000 },
-        { date: '03 Aug', Orders: 1200 },
-        { date: '04 Aug', Orders: 1350 },
-        { date: '05 Aug', Orders: 900 },
-        { date: '06 Aug', Orders: 950 },
-        { date: '07 Aug', Orders: 800 },
-        { date: '08 Aug', Orders: 1900 },
-        { date: '09 Aug', Orders: 1700 },
-        { date: '10 Aug', Orders: 500 },
-        { date: '11 Aug', Orders: 850 },
-        { date: '12 Aug', Orders: 1500 },
-        { date: '13 Aug', Orders: 1200 },
-        { date: '14 Aug', Orders: 1250 },
-        { date: '15 Aug', Orders: 1800 },
-        { date: '16 Aug', Orders: 1870 },
-        { date: '17 Aug', Orders: 1780 },
-        { date: '18 Aug', Orders: 1390 },
-        { date: '19 Aug', Orders: 990 },
-        { date: '20 Aug', Orders: 1000 },
-        { date: '21 Aug', Orders: 1190 },
-        { date: '22 Aug', Orders: 1230 },
-        { date: '23 Aug', Orders: 770 },
-        { date: '24 Aug', Orders: 1000 },
-        { date: '25 Aug', Orders: 1060 },
-        { date: '25 Aug', Orders: 1200 },
-        { date: '25 Aug', Orders: 1680 },
-        { date: '25 Aug', Orders: 1300 },
-        { date: '25 Aug', Orders: 1200 },
-        { date: '30 Aug', Orders: 1020 },
+    const orderDataMonth = [
+        { date: '01 Aug', Orders: 980 },
+        { date: '02 Aug', Orders: 1120 },
+        { date: '03 Aug', Orders: 860 },
+        { date: '04 Aug', Orders: 1340 },
+        { date: '05 Aug', Orders: 1050 },
+        { date: '06 Aug', Orders: 720 },
+        { date: '07 Aug', Orders: 890 },
+        { date: '08 Aug', Orders: 1560 },
+        { date: '09 Aug', Orders: 1430 },
+        { date: '10 Aug', Orders: 610 },
+        { date: '11 Aug', Orders: 950 },
+        { date: '12 Aug', Orders: 1280 },
+        { date: '13 Aug', Orders: 1100 },
+        { date: '14 Aug', Orders: 1370 },
+        { date: '15 Aug', Orders: 1690 },
+        { date: '16 Aug', Orders: 1820 },
+        { date: '17 Aug', Orders: 1590 },
+        { date: '18 Aug', Orders: 1240 },
+        { date: '19 Aug', Orders: 870 },
+        { date: '20 Aug', Orders: 1030 },
+        { date: '21 Aug', Orders: 1180 },
+        { date: '22 Aug', Orders: 1400 },
+        { date: '23 Aug', Orders: 920 },
+        { date: '24 Aug', Orders: 1060 },
+        { date: '25 Aug', Orders: 1310 },
+        { date: '26 Aug', Orders: 1490 },
+        { date: '27 Aug', Orders: 1670 },
+        { date: '28 Aug', Orders: 1380 },
+        { date: '29 Aug', Orders: 1150 },
+        { date: '30 Aug', Orders: 990 },
+        { date: '31 Aug', Orders: 1220 },
     ]
+
+    const orderDataWeek = [
+        { date: 'Mon', Orders: 620 },
+        { date: 'Tue', Orders: 745 },
+        { date: 'Wed', Orders: 580 },
+        { date: 'Thu', Orders: 890 },
+        { date: 'Fri', Orders: 1120 },
+        { date: 'Sat', Orders: 1450 },
+        { date: 'Sun', Orders: 1290 },
+    ]
+
+    const orderDataYear = [
+        { date: 'Jan', Orders: 24500 },
+        { date: 'Feb', Orders: 21800 },
+        { date: 'Mar', Orders: 27600 },
+        { date: 'Apr', Orders: 25300 },
+        { date: 'May', Orders: 29100 },
+        { date: 'Jun', Orders: 31200 },
+        { date: 'Jul', Orders: 28700 },
+        { date: 'Aug', Orders: 33400 },
+        { date: 'Sep', Orders: 30900 },
+        { date: 'Oct', Orders: 34800 },
+        { date: 'Nov', Orders: 38200 },
+        { date: 'Dec', Orders: 41500 },
+    ]
+
+    const orderBlank = [
+        { date: 0, order: 0 }
+    ]
+
 
     const recentOrders = [
         { id: 'ORD123556', customer: 'Pradeep Dagar', amount: 5420, status: 'Delivered', date: '10Aug 2026, 10:30 AM' },
@@ -46,13 +77,23 @@ const Dashboard = () => {
         { id: 'ORD123459', customer: 'Sneha Gupta', amount: 1150, status: 'Cancelled', date: '30 July 2026, 1:05 PM' },
     ]
 
+
+
+
     const [open, setOpen] = useState(false);
-    const [selectedRange, setSelectedRange] = useState("This Month");
+    const [selectedRange, setSelectedRange] = useState("select range");
 
     const handleSelect = (range) => {
         setSelectedRange(range);
         setOpen(false);
     };
+
+
+    const chartData =
+        selectedRange === 'This Week' ? orderDataWeek :
+            selectedRange === 'This Month' ? orderDataMonth :
+                selectedRange === 'This Year' ? orderDataYear :
+                    orderBlank;
 
 
 
@@ -165,7 +206,7 @@ const Dashboard = () => {
                                 <button
                                     type="button"
                                     onClick={() => setOpen((preview) => !preview)}
-                                    className='hover:cursor-pointer flex items-center border rounded px-4 gap-2 test-sm md:text-md w-35 md:w-38'
+                                    className='hover:cursor-pointer flex items-center border rounded px-4 gap-2 test-sm md:text-md w-34 md:w-40'
                                 >
                                     <p className='text-lg font-medium'>{selectedRange}</p>
                                     <ChevronDown size={16}
@@ -206,9 +247,10 @@ const Dashboard = () => {
 
 
                         {/* graph */}
+
                         <div className='w-full h-80 ml-2 mr-2 '>
                             <ResponsiveContainer width='96%' height='100%'>                      {/* measures the box */}
-                                <LineChart data={orderData}>                                     {/* data */}
+                                <LineChart data={chartData}>                                     {/* data */}
                                     <CartesianGrid />                                            {/* optional gridlines */}
                                     <XAxis dataKey={'date'} />                                   {/* labels along the bottom */}
                                     <YAxis />                                                    {/* numbers along the left side, auto-calculated */}
@@ -222,6 +264,7 @@ const Dashboard = () => {
                         </div>
 
                     </div>
+
 
                     <div className='border rounded  w-full md:w-1/3 h-auto md:h-100'>
                         <p className='p-5 text-xl font-semibold'>Top Categories</p>
