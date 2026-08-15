@@ -269,7 +269,7 @@ const Dashboard = () => {
                 </div>
 
 
-<div className='min-w-175'>
+
                 <div className=' border rounded m-4 md:m-8  overflow-x-auto'>
 
 
@@ -283,7 +283,7 @@ const Dashboard = () => {
                         </button>
                     </div>
 
-
+<div className='min-w-175'>
 
                     <div className='grid grid-cols-5 bg-gray-50 px-5 py-4  font-medium text-gray-600'>
                         <p>Order ID</p>
