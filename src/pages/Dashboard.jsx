@@ -165,7 +165,7 @@ const Dashboard = () => {
                                 <button
                                     type="button"
                                     onClick={() => setOpen((preview) => !preview)}
-                                    className='hover:cursor-pointer flex items-center border rounded px-4 gap-2 w-38'
+                                    className='hover:cursor-pointer flex items-center border rounded px-4 gap-2 test-sm md:text-md w-35 md:w-38'
                                 >
                                     <p className='text-lg font-medium'>{selectedRange}</p>
                                     <ChevronDown size={16}
@@ -270,7 +270,7 @@ const Dashboard = () => {
 
 
 
-                <div className=' border rounded m-4 md:m-8 overflow-x-auto'>
+                <div className=' border rounded m-4 md:m-8 min-w-175 overflow-x-auto'>
 
 
                     <div className='flex flex-wrap  justify-between items-center gap-3 p-5 '>
@@ -298,7 +298,7 @@ const Dashboard = () => {
 
                         <div
                             key={order.id}
-                            className='grid grid-cols-5  gap-2 md:gap-0 px-5 py-4 border-t border-gray-100 '
+                            className='grid grid-cols-5  px-5 py-4 border-t border-gray-100 '
                         >
                             <p className=' font-medium '>{order.id}</p>
                             <p className=' font-medium '>{order.customer}</p>
