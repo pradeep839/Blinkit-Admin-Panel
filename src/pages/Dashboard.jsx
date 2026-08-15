@@ -283,45 +283,45 @@ const Dashboard = () => {
                         </button>
                     </div>
 
-<div className='min-w-175'>
+                    <div className='min-w-175'>
 
-                    <div className='grid grid-cols-5 bg-gray-50 px-5 py-4  font-medium text-gray-600'>
-                        <p>Order ID</p>
-                        <p>Customer</p>
-                        <p>Amount</p>
-                        <p>Status</p>
-                        <p>Date & Time</p>
-                    </div>
-
-
-                    {recentOrders.map((order) => (
-
-                        <div
-                            key={order.id}
-                            className='grid grid-cols-5  px-5 py-4 border-t border-gray-100 '
-                        >
-                            <p className=' font-medium '>{order.id}</p>
-                            <p className=' font-medium '>{order.customer}</p>
-                            <p className=' font-medium '>₹{order.amount}</p>
-                            <p className=''>
-                                <span className={` text-sm font-medium ${order.status === 'Delivered'
-                                    ? 'text-green-700 bg-green-50 px-2 py-1 rounded-md' :
-                                    order.status === 'Pending'
-                                        ? 'text-yellow-700 bg-yellow-50 px-2 py-1 rounded-md' :
-                                        'text-red-700 bg-red-50 px-2 py-1 rounded-md'
-                                    }`}>
-                                    {order.status}</span>
-                            </p>
-                            <p className=' font-medium '>{order.date}</p>
-
+                        <div className='grid grid-cols-5 bg-gray-50 px-5 py-4  font-medium text-gray-600'>
+                            <p>Order ID</p>
+                            <p>Customer</p>
+                            <p>Amount</p>
+                            <p>Status</p>
+                            <p>Date & Time</p>
                         </div>
-                    ))}
+
+
+                        {recentOrders.map((order) => (
+
+                            <div
+                                key={order.id}
+                                className='grid grid-cols-5  px-5 py-4 border-t border-gray-100 '
+                            >
+                                <p className=' font-medium '>{order.id}</p>
+                                <p className=' font-medium '>{order.customer}</p>
+                                <p className=' font-medium '>₹{order.amount}</p>
+                                <p className=''>
+                                    <span className={` text-sm font-medium ${order.status === 'Delivered'
+                                        ? 'text-green-700 bg-green-50 px-2 py-1 rounded-md' :
+                                        order.status === 'Pending'
+                                            ? 'text-yellow-700 bg-yellow-50 px-2 py-1 rounded-md' :
+                                            'text-red-700 bg-red-50 px-2 py-1 rounded-md'
+                                        }`}>
+                                        {order.status}</span>
+                                </p>
+                                <p className=' font-medium '>{order.date}</p>
+
+                            </div>
+                        ))}
 
 
 
 
+                    </div>
                 </div>
-</div>
 
 
 
