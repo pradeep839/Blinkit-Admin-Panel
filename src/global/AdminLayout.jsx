@@ -6,9 +6,9 @@ import AdminSideBar from './AdminSideBar';
 const AdminLayout = () => {
   return (
   <>
-  <div className='flex'>
+  <div className='flex h-screen overflow-hidden'>
   <AdminSideBar/>
-    <main className='flex-1  '>
+    <main className='flex-1   min-w-0  overflow-y-auto'>
   <Outlet/>
   </main>
   </div>
