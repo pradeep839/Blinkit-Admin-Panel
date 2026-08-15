@@ -155,6 +155,8 @@ const Login = () => {
             </button>
           </form>
 
+          <p className='hover:cursor-pointer text-gray-500 md:text-lg text-sm'>Don't have an account? <span className='hover:text-blue-600'> Sign Up </span></p>
+
           <p className='text-center text-gray-400 mt-2 text-sm'>© 2004 Blinkit. All rights reserved</p>
 
         </div>

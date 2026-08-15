@@ -1,81 +1,15 @@
 import React from 'react'
+import { orderDataWeek, orderDataMonth, orderDataYear, orderBlank, recentOrders } from '../global/data';
 import { Search, ChartColumnStacked, PackageSearch, ShoppingCart, UsersRound, ChevronDown, Apple, Bubbles, Popcorn, Beer, FileUser } from 'lucide-react'
+
 import { useState } from 'react';
 import { ResponsiveContainer, XAxis, YAxis, LineChart, Line, Tooltip, CartesianGrid } from 'recharts'
 
 const Dashboard = () => {
 
-    const orderDataMonth = [
-        { date: '01 Aug', Orders: 980 },
-        { date: '02 Aug', Orders: 1120 },
-        { date: '03 Aug', Orders: 860 },
-        { date: '04 Aug', Orders: 1340 },
-        { date: '05 Aug', Orders: 1050 },
-        { date: '06 Aug', Orders: 720 },
-        { date: '07 Aug', Orders: 890 },
-        { date: '08 Aug', Orders: 1560 },
-        { date: '09 Aug', Orders: 1430 },
-        { date: '10 Aug', Orders: 610 },
-        { date: '11 Aug', Orders: 950 },
-        { date: '12 Aug', Orders: 1280 },
-        { date: '13 Aug', Orders: 1100 },
-        { date: '14 Aug', Orders: 1370 },
-        { date: '15 Aug', Orders: 1690 },
-        { date: '16 Aug', Orders: 1820 },
-        { date: '17 Aug', Orders: 1590 },
-        { date: '18 Aug', Orders: 1240 },
-        { date: '19 Aug', Orders: 870 },
-        { date: '20 Aug', Orders: 1030 },
-        { date: '21 Aug', Orders: 1180 },
-        { date: '22 Aug', Orders: 1400 },
-        { date: '23 Aug', Orders: 920 },
-        { date: '24 Aug', Orders: 1060 },
-        { date: '25 Aug', Orders: 1310 },
-        { date: '26 Aug', Orders: 1490 },
-        { date: '27 Aug', Orders: 1670 },
-        { date: '28 Aug', Orders: 1380 },
-        { date: '29 Aug', Orders: 1150 },
-        { date: '30 Aug', Orders: 990 },
-        { date: '31 Aug', Orders: 1220 },
-    ]
+   
 
-    const orderDataWeek = [
-        { date: 'Mon', Orders: 620 },
-        { date: 'Tue', Orders: 745 },
-        { date: 'Wed', Orders: 580 },
-        { date: 'Thu', Orders: 890 },
-        { date: 'Fri', Orders: 1120 },
-        { date: 'Sat', Orders: 1450 },
-        { date: 'Sun', Orders: 1290 },
-    ]
-
-    const orderDataYear = [
-        { date: 'Jan', Orders: 24500 },
-        { date: 'Feb', Orders: 21800 },
-        { date: 'Mar', Orders: 27600 },
-        { date: 'Apr', Orders: 25300 },
-        { date: 'May', Orders: 29100 },
-        { date: 'Jun', Orders: 31200 },
-        { date: 'Jul', Orders: 28700 },
-        { date: 'Aug', Orders: 33400 },
-        { date: 'Sep', Orders: 30900 },
-        { date: 'Oct', Orders: 34800 },
-        { date: 'Nov', Orders: 38200 },
-        { date: 'Dec', Orders: 41500 },
-    ]
-
-    const orderBlank = [
-        { date: 0, order: 0 }
-    ]
-
-
-    const recentOrders = [
-        { id: 'ORD123556', customer: 'Pradeep Dagar', amount: 5420, status: 'Delivered', date: '10Aug 2026, 10:30 AM' },
-        { id: 'ORD123456', customer: 'Rahul Sharma', amount: 542, status: 'Delivered', date: '30 July 2026, 10:30 AM' },
-        { id: 'ORD123457', customer: 'Priya Patel', amount: 890, status: 'Pending', date: '30 July 2026, 11:15 AM' },
-        { id: 'ORD123458', customer: 'Amit Kumar', amount: 320, status: 'Delivered', date: '30 July 2026, 12:40 PM' },
-        { id: 'ORD123459', customer: 'Sneha Gupta', amount: 1150, status: 'Cancelled', date: '30 July 2026, 1:05 PM' },
-    ]
+    
 
 
 
@@ -100,6 +34,7 @@ const Dashboard = () => {
     return (
         <>
             <div>
+                {/* dashboard */}
                 <div className='flex items-center justify-between  shadow-xl h-15 md:h-20 md:w-full'>
 
                     <div>
@@ -130,6 +65,7 @@ const Dashboard = () => {
                 </div>
 
 
+                {/* total */}
                 <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-10 ml-4 md:ml-8 mr-4 md:mr-8 '>
 
                     {/* total categories */}
@@ -182,6 +118,7 @@ const Dashboard = () => {
                     </div>
 
                 </div>
+
 
 
                 <div className='flex flex-col md:flex-row  gap-7 mt-10 ml-4 md:ml-8 mr-4 md:mr-8'>
@@ -265,7 +202,7 @@ const Dashboard = () => {
 
                     </div>
 
-
+                    {/* top categories */}
                     <div className='border rounded  w-full md:w-1/3 h-auto md:h-100'>
                         <p className='p-5 text-xl font-semibold'>Top Categories</p>
                         <div className='ml-5 mr-5 mb-5 mt-3 flex flex-col  gap-4  ' >
@@ -312,7 +249,7 @@ const Dashboard = () => {
                 </div>
 
 
-
+                {/* recent orders */}
                 <div className=' border rounded m-4 md:m-8  overflow-x-auto'>
 
 
@@ -328,7 +265,7 @@ const Dashboard = () => {
 
                     <div className='min-w-175'>
 
-                        <div className='grid grid-cols-5 bg-gray-50 px-5 py-4  font-medium text-gray-600'>
+                        <div className='grid grid-cols-5 bg-gray-50 px-5 py-4  `font-medium text-gray-600`'>
                             <p>Order ID</p>
                             <p>Customer</p>
                             <p>Amount</p>
