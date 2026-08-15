@@ -269,8 +269,8 @@ const Dashboard = () => {
                 </div>
 
 
-
-                <div className=' border rounded m-4 md:m-8 min-w-175 overflow-x-auto'>
+<div className='min-w-175'>
+                <div className=' border rounded m-4 md:m-8  overflow-x-auto'>
 
 
                     <div className='flex flex-wrap  justify-between items-center gap-3 p-5 '>
@@ -302,7 +302,7 @@ const Dashboard = () => {
                         >
                             <p className=' font-medium '>{order.id}</p>
                             <p className=' font-medium '>{order.customer}</p>
-                            <p className=' font-medium '>{order.amount}</p>
+                            <p className=' font-medium '>₹{order.amount}</p>
                             <p className=''>
                                 <span className={` text-sm font-medium ${order.status === 'Delivered'
                                     ? 'text-green-700 bg-green-50 px-2 py-1 rounded-md' :
@@ -321,7 +321,7 @@ const Dashboard = () => {
 
 
                 </div>
-
+</div>
 
 
 
