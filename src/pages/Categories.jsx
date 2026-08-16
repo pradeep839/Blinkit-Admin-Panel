@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 
 
 const Categories = () => {
-  const IconComponent = Icons[categories.icon];
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
@@ -114,6 +113,7 @@ const Categories = () => {
           {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
             <button
               type="button"
+              key={page}
               onClick={() => setCurrentPage(page)}
               className={` px-3 py-1 rounded-md  font-medium hover:cursor-pointer ${currentPage === page
                 ? 'bg-green-700 text-white' :

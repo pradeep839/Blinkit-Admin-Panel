@@ -5,12 +5,18 @@ import { useState } from 'react'
 
 const NewCategory = () => {
     const [open, setOpen] = useState(false);
-    const [selectedStatus, setSelectedStatus] = useState('Select Status')
+    const [selectedStatus, setSelectedStatus] = useState('Select Status');
+    const [categoryName, setCategoryName] = useState('');
+    const [selectedIcon, setSelectedIcon] = useState({ name: 'Plus', icon: Plus });
 
     const handleselect = (status) => {
         setSelectedStatus(status);
         setOpen(false)
     };
+
+
+    const isStatusActive = selectedStatus === 'Active'
+    const isStatusInactive = selectedStatus === 'Inactive'
 
     return (
         <>
@@ -40,6 +46,8 @@ const NewCategory = () => {
                             <br />
                             <input
                                 type="text"
+                                value={categoryName}
+                                onChange={(e) => setCategoryName(e.target.value)}
                                 placeholder='Enter category name'
                                 className=' outline-none border border-gray-200 rounded-md mt-3 w-65 md:w-170 pl-2 py-2 md:py-3 text-xl'
                             />
@@ -53,23 +61,48 @@ const NewCategory = () => {
 
                             <p className='mt-2 text-gray-500 font-medium tracking-wide'>Chose an Icon</p>
 
-                            <div className='flex items-center mt-5 gap-2 md:gap-5 ml-4'>
-                                <div className='bg-green-50 border border-green-400 rounded-md p-1 md:p-4 hover:bg-green-100 hover:cursor-pointer'>
+                            <div className='flex items-center mt-5 gap-2 md:gap-5 '>
+                                <div
+                                    onClick={() => setSelectedIcon({ name: 'Leaf', icon: Leaf, color: '#038c25' })}
+                                    className={`bg-green-50 border border-green-400 rounded-md p-1 md:p-4 hover:bg-green-100 hover:cursor-pointer ${selectedIcon.name === 'Leaf' ? 'border-green-600 ring-2 ring-green-300' : 'border-green-400'
+                                        }`}
+                                >
                                     <Leaf color="#038c25" size={30} />
                                 </div>
-                                <div className='bg-violet-50 border border-violet-400 rounded-md p-1 md:p-4 hover:bg-violet-100 hover:cursor-pointer'>
+
+                                <div
+                                   onClick={() => setSelectedIcon({ name: 'Calendar', icon: Calendar, color: '#47038c' })}
+                                    className={`bg-violet-50 border rounded-md p-1 md:p-4 hover:bg-violet-100 hover:cursor-pointer ${selectedIcon.name === 'Calendar' ? 'border-violet-600 ring-2 ring-violet-300' : 'border-violet-400'
+                                        }`}
+                                >
                                     <Calendar color="#47038c" size={30} />
                                 </div>
-                                <div className='bg-blue-50 border border-blue-400 rounded-md p-1 md:p-4 hover:bg-blue-100 hover:cursor-pointer'>
+
+                                <div
+                                    onClick={() => setSelectedIcon({ name: 'Milk', icon: Milk, color: '#0060fa' })}
+                                    className={`bg-blue-50 border rounded-md p-1 md:p-4 hover:bg-blue-100 hover:cursor-pointer ${selectedIcon.name === 'Milk' ? 'border-blue-600 ring-2 ring-blue-300' : 'border-blue-400'
+                                        }`}                                >
                                     <Milk color="#0060fa" size={30} />
                                 </div>
-                                <div className='bg-pink-50 border border-pink-400 rounded-md p-1 md:p-4 hover:bg-pink-100 hover:cursor-pointer'>
+
+                                <div
+                                    onClick={() => setSelectedIcon({ name: 'Heart', icon: Heart, color: '#fa00cc' })}
+                                    className={`bg-pink-50 border rounded-md p-1 md:p-4 hover:bg-pink-100 hover:cursor-pointer ${selectedIcon.name === 'Heart' ? 'border-pink-600 ring-2 ring-pink-300' : 'border-pink-400'
+                                        }`}                                >
                                     <Heart color="#fa00cc" size={30} />
                                 </div>
-                                <div className=' border border-black-100 rounded-md p-1 md:p-4 hover:bg-gray-100 hover:cursor-pointer'>
+
+                                <div
+                                    onClick={() => setSelectedIcon({ name: 'House', icon: House })}
+                                    className={`border rounded-md p-1 md:p-4 hover:bg-gray-100 hover:cursor-pointer ${selectedIcon.name === 'House' ? 'border-gray-600 ring-2 ring-gray-300' : 'border-black-100'
+                                        }`}                                >
                                     <House size={30} />
                                 </div>
-                                <div className=' border border-black-100 rounded-md p-1 md:p-4 hover:bg-gray-100 hover:cursor-pointer'>
+
+                                <div
+                                    onClick={() => setSelectedIcon({ name: 'Plus', icon: Plus })}
+                                    className={`border rounded-md p-1 md:p-4 hover:bg-gray-100 hover:cursor-pointer ${selectedIcon.name === 'Plus' ? 'border-gray-600 ring-2 ring-gray-300' : 'border-black-100'
+                                        }`}                                >
                                     <Plus size={30} />
                                 </div>
                             </div>
@@ -119,7 +152,7 @@ const NewCategory = () => {
 
 
                         {/* save category */}
-                        <div className='flex justify-between mt-17 md:mt-25'>
+                        <div className='flex justify-between mt-17 md:mt-25 gap-1'>
                             <button
                                 type="button"
                                 className='text-sm md:text-xl font-bold text-white bg-green-700 tracking-wide w-50 md:w-130 py-2 md:py-3 rounded-md hover:cursor-pointer hover:bg-green-600'
@@ -140,15 +173,22 @@ const NewCategory = () => {
                     {/* preview */}
                     <div className='border border-gray-300 rounded-md p-3 md:p-5 md:pl-8 w-70 md:w-120  h-85 md:h-130'>
                         <p className=' text-lg md:text-2xl font-semibold'>Preview</p>
+
                         <div className='flex justify-center md:mt-10'>
-                            <div className='bg-green-50 border border-gray-200 rounded-xl p-4 md:p-18  hover:bg-green-100 hover:cursor-pointer '>
-                                <Leaf color="#038c25" size={30} />
+                            <div className=' bg-gray-50 border border-gray-200 rounded-xl p-4 md:p-18  hover:bg-gray-100  hover:cursor-pointer '>
+                                <selectedIcon.icon color={selectedIcon.color} size={30} />
                             </div>
 
                         </div>
                         <div>
-                            <p className='flex items-center justify-center mt-5 text-2xl'>Category Name</p>
-                            <p className='flex justify-center items-cente mt-5  text-green-600 bg-green-50 border border-green-400 rounded-xl'>Active</p>
+                            <p className='flex items-center justify-center mt-5 text-2xl'>  {categoryName || 'Category Name'}</p>
+                            <p className={`flex justify-center items-cente mt-5 py-1 md:w-35 md:ml-35 text-lg   rounded-xl
+                                 ${isStatusActive
+                                    ? 'text-green-600 bg-green-50 border border-green-400'
+                                    : isStatusInactive
+                                        ? 'text-red-600 bg-red-50 border border-red-400'
+                                        : 'text-gray-500 bg-gray-50 border border-gray-300'
+                                }`}>{selectedStatus}</p>
                         </div>
 
 

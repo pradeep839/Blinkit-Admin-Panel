@@ -9,6 +9,7 @@ import Orders from './pages/Orders'
 import Users from './pages/Users'
 import Settings from './pages/Settings'
 import NewCategory from './pages/NewCategory'
+import NewProduct from './pages/NewProduct'
 
 
 const App = () => {
@@ -26,6 +27,8 @@ const App = () => {
           <Route path='/users' element={<Users />} />
           <Route path='/settings' element={<Settings />} />
           <Route path='/new/category' element={<NewCategory/>}/>
+          <Route path='/new/product' element={<NewProduct/>}/>
+
         </Route>
 
       </Routes>

@@ -7,9 +7,9 @@ import { ResponsiveContainer, XAxis, YAxis, LineChart, Line, Tooltip, CartesianG
 
 const Dashboard = () => {
 
-   
 
-    
+
+
 
 
 
@@ -263,49 +263,49 @@ const Dashboard = () => {
                         </button>
                     </div>
 
-                   
-
-                        <div className='hidden md:flex justify-between  bg-gray-50 px-5 py-4  font-medium text-gray-600'>
-                            <p className='w-1/5'>Order ID</p>
-                            <p className='w-1/5'>Customer</p>
-                            <p className='w-1/5'>Amount</p>
-                            <p className='w-1/5'>Status</p>
-                            <p className='w-1/5'>Date & Time</p>
-                        </div>
 
 
-                        {recentOrders.map((order) => (
-
-                            <div
-                                key={order.id}
-                                className='flex flex-col md:flex-row justify-between  items-start px-5 py-4 border-t border-gray-100 font-medium'
-                            >
-                                <p  className='  w-full md:w-1/5'>{order.id}</p>
-                                <p  className=' w-full md:w-1/5'>{order.customer}</p>
-                                <p  className=' w-full md:w-1/5'>₹{order.amount}</p>
-                                <p className='w-full md:w-1/5'>
-                                    <span className={` text-sm font-medium ${order.status === 'Delivered'
-                                        ? 'text-green-700 bg-green-50 px-2 py-1 rounded-md' :
-                                        order.status === 'Pending'
-                                            ? 'text-yellow-700 bg-yellow-50 px-2 py-1 rounded-md' :
-                                            'text-red-700 bg-red-50 px-2 py-1 rounded-md'
-                                        }`}>
-                                        {order.status}</span>
-                                </p>
-                                <p className='w-full md:w-1/5'>{order.date}</p>
-
-                            </div>
-                        ))}
-
-
-
-
+                    <div className='hidden md:flex justify-between  bg-gray-50 px-5 py-4  font-medium text-gray-600'>
+                        <p className='w-1/5'>Order ID</p>
+                        <p className='w-1/5'>Customer</p>
+                        <p className='w-1/5'>Amount</p>
+                        <p className='w-1/5'>Status</p>
+                        <p className='w-1/5'>Date & Time</p>
                     </div>
+
+
+                    {recentOrders.map((order) => (
+
+                        <div
+                            key={order.id}
+                            className='flex flex-col md:flex-row justify-between  items-start px-5 py-4 border-t border-gray-100 font-medium'
+                        >
+                            <p className='  w-full md:w-1/5'>{order.id}</p>
+                            <p className=' w-full md:w-1/5'>{order.customer}</p>
+                            <p className=' w-full md:w-1/5'>₹{order.amount}</p>
+                            <p className='w-full md:w-1/5'>
+                                <span className={` text-sm font-medium ${order.status === 'Delivered'
+                                    ? 'text-green-700 bg-green-50 px-2 py-1 rounded-md' :
+                                    order.status === 'Pending'
+                                        ? 'text-yellow-700 bg-yellow-50 px-2 py-1 rounded-md' :
+                                        'text-red-700 bg-red-50 px-2 py-1 rounded-md'
+                                    }`}>
+                                    {order.status}</span>
+                            </p>
+                            <p className='w-full md:w-1/5'>{order.date}</p>
+
+                        </div>
+                    ))}
+
+
+
+
                 </div>
+            </div>
 
 
 
-          
+
 
         </>
     )
