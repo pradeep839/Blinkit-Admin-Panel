@@ -8,6 +8,7 @@ import Products from './pages/Products'
 import Orders from './pages/Orders'
 import Users from './pages/Users'
 import Settings from './pages/Settings'
+import NewCategory from './pages/NewCategory'
 
 
 const App = () => {
@@ -20,10 +21,11 @@ const App = () => {
         <Route element={<AdminLayout />}>
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/categories' element={<Categories />} />
-          <Route path='products' element={<Products />} />
-          <Route path='orders' element={<Orders />} />
-          <Route path='users' element={<Users />} />
-          <Route path='settings' element={<Settings />} />
+          <Route path='/products' element={<Products />} />
+          <Route path='/orders' element={<Orders />} />
+          <Route path='/users' element={<Users />} />
+          <Route path='/settings' element={<Settings />} />
+          <Route path='/new/category' element={<NewCategory/>}/>
         </Route>
 
       </Routes>

@@ -263,14 +263,14 @@ const Dashboard = () => {
                         </button>
                     </div>
 
-                    <div className='min-w-175'>
+                   
 
-                        <div className='grid grid-cols-5 bg-gray-50 px-5 py-4  `font-medium text-gray-600`'>
-                            <p>Order ID</p>
-                            <p>Customer</p>
-                            <p>Amount</p>
-                            <p>Status</p>
-                            <p>Date & Time</p>
+                        <div className='hidden md:flex justify-between  bg-gray-50 px-5 py-4  font-medium text-gray-600'>
+                            <p className='w-1/5'>Order ID</p>
+                            <p className='w-1/5'>Customer</p>
+                            <p className='w-1/5'>Amount</p>
+                            <p className='w-1/5'>Status</p>
+                            <p className='w-1/5'>Date & Time</p>
                         </div>
 
 
@@ -278,12 +278,12 @@ const Dashboard = () => {
 
                             <div
                                 key={order.id}
-                                className='grid grid-cols-5  px-5 py-4 border-t border-gray-100 '
+                                className='flex flex-col md:flex-row justify-between  items-start px-5 py-4 border-t border-gray-100 font-medium'
                             >
-                                <p className=' font-medium '>{order.id}</p>
-                                <p className=' font-medium '>{order.customer}</p>
-                                <p className=' font-medium '>₹{order.amount}</p>
-                                <p className=''>
+                                <p  className='  w-full md:w-1/5'>{order.id}</p>
+                                <p  className=' w-full md:w-1/5'>{order.customer}</p>
+                                <p  className=' w-full md:w-1/5'>₹{order.amount}</p>
+                                <p className='w-full md:w-1/5'>
                                     <span className={` text-sm font-medium ${order.status === 'Delivered'
                                         ? 'text-green-700 bg-green-50 px-2 py-1 rounded-md' :
                                         order.status === 'Pending'
@@ -292,7 +292,7 @@ const Dashboard = () => {
                                         }`}>
                                         {order.status}</span>
                                 </p>
-                                <p className=' font-medium '>{order.date}</p>
+                                <p className='w-full md:w-1/5'>{order.date}</p>
 
                             </div>
                         ))}
@@ -305,7 +305,7 @@ const Dashboard = () => {
 
 
 
-            </div>
+          
 
         </>
     )
