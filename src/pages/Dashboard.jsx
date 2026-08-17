@@ -66,10 +66,10 @@ const Dashboard = () => {
 
 
                 {/* total */}
-                <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-10 ml-4 md:ml-8 mr-4 md:mr-8 '>
+                <div className='flex flex-col md:flex-row overflow-x-auto gap-6 mt-10 ml-4 md:ml-8 mr-4 md:mr-8 '>
 
                     {/* total categories */}
-                    <div className='flex items-center gap-2 md:gap-5 bg-violet-50 rounded-xl py-8  px-7'>
+                    <div className='flex items-center gap-2 md:gap-5 bg-violet-50 rounded-xl py-8  px-7 md:w-80'>
                         <div className='bg-violet-100 rounded-full p-3'>
                             <ChartColumnStacked color="#8b5cf6" size={30} />
                         </div>
@@ -82,7 +82,7 @@ const Dashboard = () => {
 
 
                     {/* total products */}
-                    <div className='flex items-center gap-2 md:gap-5 bg-amber-50 rounded-xl py-8  px-7'>
+                    <div className='flex items-center gap-2 md:gap-5 bg-amber-50 rounded-xl py-8  px-7 md:w-80'>
                         <div className='bg-amber-100 rounded-full p-3'>
                             <PackageSearch color='#d97706' size={30} />
                         </div>
@@ -94,7 +94,7 @@ const Dashboard = () => {
 
 
                     {/* total orders */}
-                    <div className='flex items-center  gap-2 md:gap-5 bg-rose-50 rounded-xl py-8  px-7'>
+                    <div className='flex items-center  gap-2 md:gap-5 bg-rose-50 rounded-xl py-8  px-7 md:w-80'>
                         <div className='bg-rose-100 rounded-full p-3'>
                             <ShoppingCart color="#FF1D8D" size={30} />
                         </div>
@@ -107,7 +107,7 @@ const Dashboard = () => {
 
 
                     {/* total users */}
-                    <div className='flex items-center gap-2 md:gap-5 bg-blue-50 rounded-xl py-8  px-7'>
+                    <div className='flex items-center gap-2 md:gap-5 bg-blue-50 rounded-xl py-8  px-7 md:w-80'>
                         <div className='bg-blue-100 rounded-full p-3'>
                             <UsersRound color='#1e40af' size={30} />
                         </div>
@@ -185,7 +185,7 @@ const Dashboard = () => {
 
                         {/* graph */}
 
-                        <div className='w-full h-80 ml-2 mr-2 '>
+                        <div className='w-full h-80 ml-2 mr-2  mb-2'>
                             <ResponsiveContainer width='96%' height='100%'>                      {/* measures the box */}
                                 <LineChart data={chartData}>                                     {/* data */}
                                     <CartesianGrid />                                            {/* optional gridlines */}
@@ -203,7 +203,7 @@ const Dashboard = () => {
                     </div>
 
                     {/* top categories */}
-                    <div className='border rounded  w-full md:w-1/3 h-auto md:h-100'>
+                    <div className='border rounded  w-auto md:w-100 h-auto '>
                         <p className='p-5 text-xl font-semibold'>Top Categories</p>
                         <div className='ml-5 mr-5 mb-5 mt-3 flex flex-col  gap-4  ' >
 

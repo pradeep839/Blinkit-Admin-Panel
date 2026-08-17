@@ -181,7 +181,7 @@ const NewCategory = () => {
 
                         </div>
                         <div>
-                            <p className='flex items-center justify-center mt-5 text-2xl'>  {categoryName || 'Category Name'}</p>
+                            <p className='flex items-center justify-center mt-5 text-2xl'>  {categoryName}</p>
                             <p className={`flex justify-center items-cente mt-5 py-1 md:w-35 md:ml-35 text-lg   rounded-xl
                                  ${isStatusActive
                                     ? 'text-green-600 bg-green-50 border border-green-400'

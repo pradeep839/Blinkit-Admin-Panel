@@ -101,6 +101,9 @@ const Categories = () => {
 
           </div>
         </div>
+
+
+        
         {/* pagination controls */}
         <div className='flex items-center justify-between m-10 overflow-x-auto'>
           <button

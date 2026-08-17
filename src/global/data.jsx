@@ -211,3 +211,51 @@ export const categories = [
     { id: 99, name: 'Best Home', icon: 'House', color: '#6366f1', status: 'Active', products: 41 },
     { id: 100, name: 'Best Seasonal', icon: 'Calendar', color: '#f59e0b', status: 'Inactive', products: 33 },
 ];
+
+
+
+
+// products
+export const products = [
+  { id: 1, name: 'Fresh Red Apples', category: 'Fruits & Vegetables', price: 180, stock: 42, status: 'Active' },
+  { id: 2, name: 'Amul Gold Full Cream Milk', category: 'Dairy & Bread', price: 36, stock: 130, status: 'Active' },
+  { id: 3, name: "Lay's Classic Salted Chips", category: 'Snacks & Munchies', price: 20, stock: 140, status: 'Active' },
+  { id: 4, name: 'Diet Coke', category: 'Beverages', price: 50, stock: 76, status: 'Active' },
+  { id: 5, name: 'Head & Shoulders Shampoo', category: 'Personal Care', price: 320, stock: 27, status: 'Active' },
+
+  { id: 6, name: 'Britannia White Bread', category: 'Dairy & Bread', price: 45, stock: 0, status: 'Inactive' },
+  { id: 7, name: "Haldiram's Aloo Bhujia", category: 'Snacks & Munchies', price: 65, stock: 52, status: 'Active' },
+  { id: 8, name: 'Robusta Bananas', category: 'Fruits & Vegetables', price: 60, stock: 65, status: 'Active' },
+  { id: 9, name: 'Dove Soap Bar', category: 'Personal Care', price: 55, stock: 90, status: 'Active' },
+  { id: 10, name: 'Real Fruit Juice - Mixed', category: 'Beverages', price: 110, stock: 34, status: 'Active' },
+
+  { id: 11, name: 'Fresh Tomatoes', category: 'Fruits & Vegetables', price: 30, stock: 0, status: 'Inactive' },
+  { id: 12, name: 'Parle-G Biscuits', category: 'Snacks & Munchies', price: 30, stock: 210, status: 'Active' },
+  { id: 13, name: 'Amul Masti Curd', category: 'Dairy & Bread', price: 40, stock: 72, status: 'Active' },
+  { id: 14, name: 'Mineral Water', category: 'Beverages', price: 20, stock: 200, status: 'Active' },
+  { id: 15, name: 'Colgate Toothpaste', category: 'Personal Care', price: 110, stock: 58, status: 'Active' },
+
+  { id: 16, name: 'Onions', category: 'Fruits & Vegetables', price: 45, stock: 88, status: 'Active' },
+  { id: 17, name: 'Himalaya Face Wash', category: 'Personal Care', price: 145, stock: 0, status: 'Inactive' },
+  { id: 18, name: 'Act II Butter Popcorn', category: 'Snacks & Munchies', price: 45, stock: 0, status: 'Inactive' },
+  { id: 19, name: 'Amul Salted Butter', category: 'Dairy & Bread', price: 63, stock: 38, status: 'Active' },
+  { id: 20, name: 'Nescafe Instant Coffee', category: 'Beverages', price: 245, stock: 22, status: 'Active' },
+
+  { id: 21, name: 'Potatoes', category: 'Fruits & Vegetables', price: 35, stock: 120, status: 'Active' },
+  { id: 22, name: 'Cadbury Dairy Milk', category: 'Snacks & Munchies', price: 50, stock: 95, status: 'Active' },
+  { id: 23, name: 'Nivea Deodorant Spray', category: 'Personal Care', price: 220, stock: 33, status: 'Active' },
+  { id: 24, name: 'Amul Processed Cheese Slices', category: 'Dairy & Bread', price: 120, stock: 19, status: 'Active' },
+  { id: 25, name: 'Sprite Can', category: 'Beverages', price: 40, stock: 0, status: 'Inactive' },
+
+  { id: 26, name: 'Fresh Spinach', category: 'Fruits & Vegetables', price: 25, stock: 18, status: 'Active' },
+  { id: 27, name: 'Fresh Paneer', category: 'Dairy & Bread', price: 90, stock: 26, status: 'Active' },
+  { id: 28, name: 'Gillette Razor', category: 'Personal Care', price: 180, stock: 12, status: 'Active' },
+  { id: 29, name: 'Oreo Cookies', category: 'Snacks & Munchies', price: 40, stock: 68, status: 'Active' },
+  { id: 30, name: 'Red Bull Energy Drink', category: 'Beverages', price: 125, stock: 15, status: 'Active' },
+
+  { id: 31, name: 'Sweet Oranges', category: 'Fruits & Vegetables', price: 90, stock: 0, status: 'Inactive' },
+  { id: 32, name: 'Lifebuoy Hand Wash', category: 'Personal Care', price: 85, stock: 47, status: 'Active' },
+  { id: 33, name: 'Farm Fresh Eggs', category: 'Dairy & Bread', price: 48, stock: 0, status: 'Inactive' },
+  { id: 34, name: 'Doritos Nacho Cheese', category: 'Snacks & Munchies', price: 85, stock: 24, status: 'Active' },
+  { id: 35, name: 'Tata Tea Gold', category: 'Beverages', price: 260, stock: 41, status: 'Active' },
+]
