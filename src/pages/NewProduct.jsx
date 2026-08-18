@@ -10,7 +10,7 @@ const NewProduct = () => {
 
         <div>
           <Link to='/products'>
-            <p className='flex  items-center gap-2 text-md md:text-xl text-gray-500 font-medium hover:cursor-pointer hover:text-gray-600'> <ChevronLeft />Back to Categories</p>
+            <p className='flex  items-center gap-2 text-md md:text-xl text-gray-500 font-medium hover:cursor-pointer hover:text-gray-600'> <ChevronLeft />Back to Products</p>
           </Link>
         </div>
 

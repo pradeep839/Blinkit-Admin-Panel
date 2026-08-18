@@ -67,7 +67,7 @@ const Products = () => {
 
 
 
-        <div className='m-10 flex flex-col md:flex-row gap-3 md:gap-1 md:items-center justify-between overflow-x-auto scrollbar-thin'>
+        <div className='m-10 flex flex-col md:flex-row gap-3 md:gap-1 md:items-center justify-between '>
 
 
           {/* search */}
